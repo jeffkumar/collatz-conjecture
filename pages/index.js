@@ -7,9 +7,12 @@ const CheckNumber = () => {
   const [seq, setSeq] = useState([]);
 
   const onClick = () => {
-    if (Number.isInteger(parseInt(ref.current.value))) {
-      const result = checkIt(ref.current.value);
+    const val = parseInt(ref.current.value);
+    if (Number.isInteger(val)) {
+      const result = checkIt(val);
       setSeq(result);
+    } else {
+      alert('You must enter a valid integer');
     }
   };
 
